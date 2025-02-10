@@ -130,11 +130,185 @@
 
 # # --- Usage Example ---
 
-# library = Library.new
+# library = Library.new("test.json")
 
 # library.add_book("1984")
 # library.add_book("Brave New World")
 # library.borrow_book("1984")
 # library.return_book("1984")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# composition
+
+# aggregation
+
+
+
+
+# class Engine
+#   def start
+#     puts "Engine is starting"
+#   end
+# end
+
+
+# class Wheels
+#   def roll
+#     puts "Wheels are rolling"
+#   end
+# end
+
+# class Car
+#   def initialize
+#     @engine = Engine.new
+#     @wheels = Wheels.new
+#   end
+
+#   def drive
+#     @engine.start
+#     @wheels.roll
+#     return "Car is moving!"
+#   end
+# end
+
+
+# engine = Engine.new
+# engine.start
+
+# wheels = Wheels.new
+# wheels.roll
+
+# car = Car.new
+# puts car.drive
+
+
+
+
+
+
+
+# Instructions
+# Create a Battery class
+# It could have a method like charge that prints "Battery is charging...".
+
+# Create a Storage class
+# It could have a method like read_data that prints "Reading data from storage...".
+
+# Create a Laptop class
+# It should instantiate its own Battery and Storage objects in the initialize method. This shows composition—the Laptop “owns” these parts.
+# Provide methods like power_on and load_files:
+# power_on should call the charge method on @battery and then print something like "Laptop powering on...".
+# load_files should call the read_data method on @storage and then print something like "Files loaded into memory.".
+# Test Your Laptop
+
+# Create a new Laptop instance.
+# Call power_on and load_files on it.
+# Observe the output to confirm the classes are working correctly together.
+
+# class Player
+#   attr_accessor :name
+
+#   def initialize(name)
+#     @name = name
+#   end
+
+#   def display
+#     puts "Player: #{@name}"
+#   end
+# end
+
+# class Team
+#   def initialize(name)
+#     @name = name
+#     @players = []
+#   end
+
+#   def add_player(player)
+#     @players << player
+#     puts "#{player.name} has joined #{@name}."
+#   end
+
+#   def show_team
+#     puts "Team: #{@name}"
+#     @players.each { |player| player.display }
+#   end
+# end
+
+# player1 = Player.new("Charles")
+# player2 = Player.new("Damen")
+
+# team = Team.new("Ruby Rockets")
+
+# team.add_player(player1)
+# team.add_player(player2)
+
+# team.show_team
+
+
+
+# Creational (e.g., Singleton, Factory)
+
+
+# Singleton Pattern:
+  # Ensures a class has only one instance.
+  # Provides a global point of access to that instance.
+
+  # Common Uses: Loggers, configuration managers, caches, and other system-wide resources that should be unique.
+
+
+
+# class Logger
+#   @@instance = Logger.new
+
+#   private_class_method :new
+
+#   def self.instance
+#     @@instance
+#   end
+
+#   def log(message)
+#     puts "Log: #{message}"
+#   end
+# end
+
+# logger1 = Logger.instance
+# logger2 = Logger.instance
+
+# logger = Logger.new
+
+# logger1.log("This is a log message.")
+
+# puts logger1.object_id == logger2.object_id  # Outputs: true
+
+
+
+
+# Access Control Methods:
+# public: Methods are accessible from outside the class.
+# private: Methods are only accessible within the class.
+# protected: Methods are accessible within the class and its subclasses.
 
